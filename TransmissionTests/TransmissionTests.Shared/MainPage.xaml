@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="TransmissionTests.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TransmissionTests"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <StackPanel>
+                <TextBlock Text="Ip: ex: (127.0.0.1:9000)"/>
+                <TextBox x:Name="IpTextBox"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Host" Click="ConnectAsHost"/>
+                <Button Content="Client" Click="ConnectAsClient"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Message:"/>
+                <TextBox x:Name="SendMessageTextBox"/>
+                <Button Content="Send Messages" Click="SendMessage"/>
+            </StackPanel>
+            <StackPanel>
+                <ScrollViewer x:Name="TextScrollViewer" Height="250">
+                    <TextBox x:Name="GetMessageTextBox" TextWrapping="Wrap" AcceptsReturn="True"/>
+                </ScrollViewer>
+                <Button Content="Get Messages" Click="ReciveMessage"/>
+            </StackPanel>
+            <StackPanel>
+                <Button Content="Disconnect" x:Name="DisconnectButton" Click="Disconnect"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
